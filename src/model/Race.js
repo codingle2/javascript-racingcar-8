@@ -8,20 +8,15 @@ export class Race {
 
   playRound() {
     this.cars.forEach((car) => {
+      if (typeof car.move !== 'function') {
+        throw new Error('Race.cars 배열에 Car 인스턴스가 아닙니다.');
+      }
       car.move();
     });
   }
 
-  playAllRounds() {
-    Array.from({ length: this.tryCount }).forEach(() => {
-      this.playRound();
-    });
-  }
-
   getWinners() {
-    const positions = this.cars.map((car) => car.getPosition());
-    const maxPosition = Math.max(...positions);
-
+    const maxPosition = Math.max(...this.cars.map((car) => car.getPosition()));
     return this.cars
       .filter((car) => car.getPosition() === maxPosition)
       .map((car) => car.getName());
