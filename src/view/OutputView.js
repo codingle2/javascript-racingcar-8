@@ -1,23 +1,22 @@
-import { Console } from '@woowacourse/mission-utils';
+import { MissionUtils } from "@woowacourse/mission-utils";
 
-export const OutputView = {
-  printStart() {
-    Console.print('\n실행 결과');
-  },
+export class OutputView {
+  static printStart() {
+    MissionUtils.Console.print("\n실행 결과");
+  }
 
-  printRoundResult(cars) {
+  static printRoundResult(cars) {
     cars.forEach((car) => {
-      const position = '-'.repeat(car.getPosition());
-      Console.print(`${car.getName()} : ${position}`);
+      MissionUtils.Console.print(`${car.name} : ${"-".repeat(car.position)}`);
     });
-    Console.print('');
-  },
+    MissionUtils.Console.print("");
+  }
 
-  printWinners(winners) {
-    Console.print(`최종 우승자 : ${winners.join(', ')}`);
-  },
+  static printWinners(winners) {
+    MissionUtils.Console.print(`최종 우승자 : ${winners.join(", ")}`);
+  }
 
-  printError(message) {
-    Console.print(message);
-  },
-};
+  static printError(message) {
+    MissionUtils.Console.print(message);
+  }
+}
