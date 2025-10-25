@@ -13,7 +13,7 @@ class InputValidator {
     }
 
     names.forEach((name) => {
-      if (name.length === 0 || name.length >= 4) {
+      if (name.length === 0 || name.length > 5) {
         throw new Error(ErrorMessage.INVALID_CAR_NAME_LENGTH);
       }
     });

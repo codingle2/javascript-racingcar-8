@@ -21,6 +21,7 @@
  │    ├── InputView.js
  │    └── OutputView.js
  ├── utils/
+ │    ├── ErrorMessage.js
  │    ├── InputValidator.js
  │    └── RandomUtils.js
 ```
@@ -47,15 +48,14 @@
 4. 모든 라운드 출력 후 최종 우승자 출력  
    - 여러 명일 경우 쉼표(,)로 구분
 
-| 사용자 입력 (InputView) |
-| ↓ |
-| 컨트롤러 (GameController) |
-| ↓ |
-| 모델 (Race, Car) — 비즈니스 로직 수행 |
-| ↓ |
-| 결과를 다시 View로 전달 |
-| ↓ |
-| OutputView에서 콘솔 출력 |
+```mermaid
+flowchart TD
+  A[사용자 입력 (InputView)] --> B[컨트롤러 (GameController)]
+  B --> C[모델 (Race, Car)\n비즈니스 로직 수행]
+  C --> D[결과를 다시 View로 전달]
+  D --> E[OutputView에서 콘솔 출력]
+```
+
 
 ## ❗️ ERROR 메시지 목록
 | 상황            | 메시지                              |
@@ -74,7 +74,6 @@
 | `feature/view`           | View 구현       | `InputView.js`, `OutputView.js` 작성 |
 | `feature/controller`     | Controller 구현 | `GameController.js` 작성             |
 | `feature/validation`     | 입력 검증 추가      | `InputValidator.js` 작성             |
-| `feature/utils`          | 랜덤 유틸리티 작성    | `RandomUtils.js` 작성                |
 | `feature/error-handling` | 에러 메시지 일원화    | `[ERROR]` 형식 통일                    |
 
 ## 코드 컨벤션 준수 사항
