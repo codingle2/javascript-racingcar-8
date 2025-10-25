@@ -17,6 +17,6 @@ export class OutputView {
   }
 
   static printError(message) {
-    MissionUtils.Console.print(message);
+    MissionUtils.Console.print(`[ERROR] ${message}`);
   }
 }
