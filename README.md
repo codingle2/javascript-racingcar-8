@@ -48,14 +48,17 @@
 4. 모든 라운드 출력 후 최종 우승자 출력  
    - 여러 명일 경우 쉼표(,)로 구분
 
-```mermaid
-flowchart TD
-  A[사용자 입력 (InputView)] --> B[컨트롤러 (GameController)]
-  B --> C[모델 (Race, Car)\n비즈니스 로직 수행]
-  C --> D[결과를 다시 View로 전달]
-  D --> E[OutputView에서 콘솔 출력]
 ```
-
+| 사용자 입력 (InputView) |
+| ↓ |
+| 컨트롤러 (GameController) |
+| ↓ |
+| 모델 (Race, Car) — 비즈니스 로직 수행 |
+| ↓ |
+| 결과를 다시 View로 전달 |
+| ↓ |
+| OutputView에서 콘솔 출력 |
+```
 
 ## ❗️ ERROR 메시지 목록
 | 상황            | 메시지                              |
