@@ -1,3 +1,4 @@
+
 import { Car } from './Car.js';
 
 export class Race {
@@ -7,12 +8,7 @@ export class Race {
   }
 
   playRound() {
-    this.cars.forEach((car) => {
-      if (typeof car.move !== 'function') {
-        throw new Error('Race.cars 배열에 Car 인스턴스가 아닙니다.');
-      }
-      car.move();
-    });
+    this.cars.forEach((car) => car.move());
   }
 
   getWinners() {

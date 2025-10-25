@@ -18,6 +18,6 @@ export const OutputView = {
   },
 
   printError(message) {
-    Console.print(`[ERROR] ${message}`);
-  }
+    Console.print(message);
+  },
 };

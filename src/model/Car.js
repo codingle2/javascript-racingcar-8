@@ -8,7 +8,7 @@ export class Car {
 
   move() {
     if (RandomUtils.pick() >= 4) {
-      this.position++;
+      this.position += 1;
     }
   }
 
