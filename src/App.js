@@ -1,5 +1,8 @@
-class App {
-  async run() {}
-}
+import { GameController } from './controller/GameController.js';
 
-export default App;
+export default class App {
+  async run() {
+    const controller = new GameController();
+    await controller.start();
+  }
+}
