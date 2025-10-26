@@ -27,7 +27,8 @@ export class GameController {
       OutputView.printWinners(winners);
     } catch (error) {
       OutputView.printError(error.message);
-      return;
+      throw error;
+      //return;
     }
   }
 

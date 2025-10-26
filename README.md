@@ -75,6 +75,7 @@ flowchart TD
 | `feature/controller`     | Controller 구현 | `GameController.js` 작성             |
 | `feature/validation`     | 입력 검증 추가      | `InputValidator.js` 작성             |
 | `feature/error-handling` | 에러 메시지 일원화    | `[ERROR]` 형식 통일                    |
+| `feature/test`           | test 구현       | `RaceGame.test.js` 작성             |
 
 ## 코드 컨벤션 준수 사항
 - indent depth ≤ 2
