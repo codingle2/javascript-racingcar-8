@@ -38,8 +38,6 @@ class InputValidator {
             throw new Error(ErrorMessage.TOO_MANY_CARS);
         }
 
-
-
         //각 이름별 세부 검사
         names.forEach(name => {
             // 길이 제한
@@ -50,9 +48,7 @@ class InputValidator {
         return names;
     }
 
-
    //시도 횟수 입력 검증
-   
     static validateTryCount(input) {
         if (typeof input !== "string") {
             throw new Error(ErrorMessage.INVALID_TYPE);
@@ -75,12 +71,11 @@ class InputValidator {
         if (count < 1) {
             throw new Error(ErrorMessage.NON_POSITIVE_TRY_COUNT);
         }
-
+        
         if (count > 50) {
         //상한선: 비정상적으로 큰 입력 방지
             throw new Error(ErrorMessage.INVALID_TRY_COUNT);
         }
-
         return count;
     }
 }

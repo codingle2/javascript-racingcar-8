@@ -7,7 +7,6 @@ const ERROR_LOG_FILE = './error_test_log.txt';
 const WIN_LOG_FILE = './win_count_log.txt';
 
 describe('자동차 경주 테스트 (강화)', () => {
-
   beforeAll(() => {
     fs.writeFileSync(ERROR_LOG_FILE, '--- 에러 테스트 로그 ---\n');
     fs.writeFileSync(WIN_LOG_FILE, '--- 우승자 집계 로그 ---\n');
@@ -38,9 +37,7 @@ describe('자동차 경주 테스트 (강화)', () => {
     }
   });
 
-  // =========================
   //2. 정상 입력값 1000회 테스트 + 통계 분석 강화
-  // =========================
   test('정상 입력값 테스트 및 통계 분석', () => {
     const cars = ['A', 'B', 'C'];
     const totalGames = 1000;
@@ -76,7 +73,6 @@ describe('자동차 경주 테스트 (강화)', () => {
     for (const [car, count] of Object.entries(winCount)) {
       fs.appendFileSync(WIN_LOG_FILE, `${car} 우승 횟수: ${count}\n`);
     }
-
 
     //통계 분석
     const winValues = Object.values(winCount);

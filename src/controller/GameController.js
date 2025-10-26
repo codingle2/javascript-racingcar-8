@@ -35,12 +35,7 @@ export class GameController {
   _playRounds(race, tryCount) {
     for (let i = 0; i < tryCount; i++) {
       race.playRound();
-      //최소 한 번 이동한 자동차가 없으면 첫 번째 자동차만 한 칸 이동
-      if (!race.anyCarMoved()) {
-        race.cars[0].position = 1;
-      }
       OutputView.printRoundResult(race.cars);
     }
-
   }
 }
